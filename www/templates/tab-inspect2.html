@@ -1,0 +1,154 @@
+ <ion-view view-title="Inspection">
+       <ion-content class="padding">
+
+       <form name="inspectForm2" novalidate="" ng-submit="inspect2()">  
+
+       <div class="list">
+       <label class="item item-input item-stacked-label">
+    <span class="input-label" >Date of Registration</span>
+    <input type="date" id="regdate" name="date_of_registration" ng-model="data.date_of_registration"  placeholder="DD/MM/YY">
+  </label>
+ 
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"    >Mfg. Month and Year</span>
+    <input type="month" id="mfmn" name="manufacturing_month_and_year" ng-model="data.manufacturing_month_and_year" >
+  </label>
+
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Insurance Valid Till</span>
+   <input type="date" id="insurance" name="insvalidity" ng-model="data.insvalidity" placeholder="Insurance Valid till">
+  </label>
+
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">National Permit Valid Till</span>
+   <input type="date" id="permittill" name="national_permit_valid_till" ng-model="data.national_permit_valid_till" placeholder="National Permit Valid Till">
+  </label> 
+  
+   <label class="item item-input item-stacked-label">
+    <span class="input-label">Fitness Valid Till</span>
+   <input type="date"  id="fitness" name="fitness_valid_till" ng-model="data.fitness_valid_till" placeholder="Fitness">
+  </label> 
+
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Seller Price Est. (Rim) </span>
+    <input type="text" ng-model="data.customer_initial_price" name="customer_initial_price" value="XXXXX">
+  </label>
+
+   <label class="item item-input item-stacked-label">
+    <span class="input-label"> Seller Price final(Rim)</span>
+    <input type="text" ng-model="data.price_on_rim" name="price_on_rim" value="XXXXX">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> EC Grid Price (RIM) </span>
+    <input type="text" ng-model="data.grid_price" name="price_on_rim" value="XXXXX">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Seller Price (With All Tyres) </span>
+    <input type="text" ng-model="data.seller_price" name="seller_price" value="XXXXX">
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Front Tyre (Drive Side)-INR </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+
+   <label class="item item-input item-stacked-label">
+    <span class="input-label"> Front Tyre (Co Drive Side) -INR </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+
+   <label class="item item-input item-stacked-label">
+    <span class="input-label"> Crown Axle Tyre (Drive Side) </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+
+<div class="last_tyre" style="display:none;">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Last Axle Tyre (Drive Side) </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+  </div>
+<label class="item item-input item-select">
+    <div class="input-label" id="variant">
+    Variant
+    </div>
+<select ng-model="data.variant" name="variant" >
+<option value="1611"> 1611 </option>
+<option value="1612"> 1611 </option>
+<option value="1613"> 1613 </option>
+<option value="2214"> 2214 </option>
+<option value="2516"> 2516 </option>
+<option value="1616"> 1616 </option>
+<option value="1612 TC"> 1612 </option>
+<option value="1613_LPT/SE"> 1612 LPT/SE </option>
+<option value="2515_TC"> 2515 TC </option>
+<option value="2515_697(Turbo)"> 2515 697 </option>
+<option value="1512_TC"> 1515 TC </option>
+<option value="LPT_2518"> LPT 2518 </option>
+<option value="3118"> 3118 </option>
+<option value="3116"> 3116 </option>
+
+</select>
+</label>
+<div class="last_tyre" style="display:none;">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Last Axle Tyre (Co Drive Side) </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+  </div>
+
+<div class="hydraulic" style="display:none">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Hydraulic Tyre (Drive Side) </span>
+    <input type="text" ng-model="data.driver_side" name="seller_price" value="XXXXX">
+  </label>
+  </div>
+
+  <div class="hydraulicco" style="display: none;">
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Hydraulic Tyre (Co Drive Side) </span>
+    <input type="text" ng-model="data.co_driver_side" name="co_drive_price" value="XXXXX">
+  </label>
+  </div>
+
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Company
+    </div>
+<select ng-model="data.company" name="comapny" >
+<option value="tata"> Tata </option>
+<option value="ashok_leyland"> Ashok Leyland </option>
+<option value="openbody"> Eicher </option>
+<option value="container"> mahindra </option>
+</select>
+</label>
+
+<label class="item item-input item-select">
+    <div class="input-label">
+      Status
+    </div>
+<select ng-model="data.status" name="status" >
+<option value="stationary"> Stationary </option>
+<option value="moving"> Moving </option>
+</select>
+</label>
+</div>
+
+<button class="button button-full button-positive" type="submit">
+            Submit
+          </button> 
+
+</style>
+
+</form>
+
+</ion-content>
+</ion-view>
+  

@@ -1,0 +1,92 @@
+<ion-view view-title="Inspection">
+       <ion-content class="padding">
+	<form name="inspectForm" novalidate="" ng-submit="inspect()">	
+         <div class="list">
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Truck Registration RTO </span>
+    <input type="text" ng-model="data.truck_passing" name="truck_passing" placeholder="HR 38">
+  </label>
+
+  
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Number</span>
+    <input type="text" ng-model="data.truck_number" name="truck_number"  placeholder="P 3498">
+  </label>
+
+ <label class="item item-input item-select">
+    <div class="input-label">
+      Seller Name
+    </div>
+<select ng-model="data.seller_name" name="seller_name" >
+<option value="aaa"> ABC </option>
+<option value="ashok_leyland"> XYZ </option>
+<option value="openbody"> DEF </option>
+<option value="container"> 123 </option>
+</select>
+</label>
+
+ <label class="item item-input item-select">
+    <div class="input-label">
+      Body Type
+    </div>
+<select ng-model="data.body_type" name="body_type" >
+<option value="open_body_full_body">Open Body-Full Body </option>
+<option value="open_body_half_body">Open Body-Half Body</option>
+<option value="container"> Container </option>
+<option value="container_scooter_body"> Container Scooter Body </option>
+<option value="container"> Container-Vehicle Carrier </option>
+<option value="container_vehicle_carrier"> Container Vehicle Carrier </option>
+
+<option value="container"> Lower-Platform Trailer </option>
+<option value="container_vehicle_carrier"> Only Horse </option>
+
+<option value="articulated_vehicles"> Articulated Vehicles (2+ axles) </option>
+
+
+
+</select>
+</label>
+
+<label class="item item-input item-select">
+    <div class="input-label">
+    Variant
+    </div>
+<select ng-model="data.variant" name="variant" >
+<option value="1611"> 1611 </option>
+<option value="1612"> 1611 </option>
+<option value="1613"> 1613 </option>
+<option value="2214"> 2214 </option>
+<option value="2516"> 2516 </option>
+<option value="1616"> 1616 </option>
+<option value="1612 TC"> 1612 </option>
+<option value="1613_LPT/SE"> 1612 LPT/SE </option>
+<option value="2515_TC"> 2515 TC </option>
+<option value="2515_697(Turbo)"> 2515 697 </option>
+<option value="1512_TC"> 1515 TC </option>
+<option value="LPT_2518"> LPT 2518 </option>
+<option value="3118"> 3118 </option>
+<option value="3116"> 3116 </option>
+
+</select>
+</label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"> Seller Price Est. (RIM) </span>
+    <input type="text" ng-model="data.seller_estimated_price_on_rim" name="seller_estimated_price_on_rim" placeholder="Jeo">
+  </label>
+
+ 
+
+</div>
+
+<div class="padding">
+         <button class="button button-full button-positive" type="submit">
+            Submit
+          </button>
+      </div>
+
+      </form>
+	  
+        </ion-content>
+</ion-view>

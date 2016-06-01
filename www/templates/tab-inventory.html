@@ -1,0 +1,42 @@
+<ion-view view-title="Inventory">
+       <ion-content class="padding">
+
+       <a class="ion-funnel" href="#/tab/filter" style="font-size: 25px;"><span style="font-size: 15px;">Filter</span></a>
+       
+
+ <div class="list">
+
+
+        <div class="item item-thumbnail-left"  ng-repeat="truck in trucks">
+       
+       <img src="/truckimg/{{truck.truckimage1}}"  data-pin-nopin="true">
+           <a href="#/tab/details/{{truck.truckid}}"> <h2>{{truck.manufacturing_month_and_year}} {{truck.oem}} {{truck.variant}} {{truck.body_type}} </h2></a>
+          <a  href="#/tab/details/{{truck.truckid}}"><p>{{seller_company_name}}</p></a>
+          <p> </p>
+
+          <a  href="#/tab/details/{{truck.truckid}}"><p>{{seller_estimated_price_on_rim}}</p></a>
+
+
+          <p style="font-size:25px;float:right;" class="ion-share" ng-click="showActionsheet()">
+</p>
+        </div>
+       
+
+        
+      </div>
+
+      <style>
+
+      .action-sheet .button 
+      {
+        font-size: 17px;
+      }
+      a
+      {
+        text-decoration: none;
+      }
+      </style>
+
+	  
+        </ion-content>
+</ion-view>
