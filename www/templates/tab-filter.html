@@ -1,98 +1,77 @@
-<ion-view view-title="Filter">
-       <ion-content class="padding">
-
-       <form name="filterForm" novalidate="" ng-submit="filter()">  
-      
- <h4> Price  </h4>
-       <div class="list card">
-            
-            <div class="range range-positive" >
-                        <i class="icon ion-ios7-sunny-outline"></i>
-                      {{price.min}}
-        <input type="range" min="30000"  max="90000" value="{{price.value}}" step="1000" ng-model="price.value" >
-                        {{price.max}}
-                        <i class="icon ion-ios7-sunny"></i>
-
-                       
-                    </div>
-                     <p style="margin: 0 33px 10px;"> Price : {{price.value}} </p>
-                     </div>
-
-                      <h4> Model   </h4>
-
-<div class="list">
-                      <label class="item item-input item-select">
-    <div class="input-label">
-      Model
+<ion-view view-title="Filter" cache-view="false">
+  <ion-content class="padding">
+    <button class="button button-full button-positive" ng-click="reload()">Magic</button>
+    <hr>
+    <form name="filterForm" novalidate="" ng-submit="filter()">
+      <h4> Price </h4>
+      <div class="list card">
+        <div class="range range-positive">
+          <i class="icon ion-ios7-sunny-outline"></i> {{price.min}}
+          <input type="range" min="30000" max="90000" value="{{price.value}}" step="1000" ng-model="price.value"> {{price.max}}
+          <i class="icon ion-ios7-sunny"></i>
+        </div>
+        <p style="margin: 0 33px 10px;"> Price : {{price.value}} </p>
+      </div>
+      <h4> Model   </h4>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Model
+          </div>
+          <select ng-model="data.oem" name="oem">
+            <option value="Tata"> Tata </option>
+            <option value="Ashok Leyland"> Ashok Leyland </option>
+            <option value="Eicher"> Eicher </option>
+            <option value="Mahindra"> Mahindra </option>
+          </select>
+        </label>
+      </div>
+      <h4> Variant  </h4>
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Variant
+          </div>
+          <select ng-model="data.variant" name="variant">
+            <option value="Tata 1512 TC">Tata 1512 TC</option>
+            <option value="Tata 1612 TC">Tata 1612 TC</option>
+            <option value="Tata 1612 Turbo">Tata 1612 Turbo</option>
+            <option value="Tata 1613 TC">Tata 1613 TC</option>
+            <option value="Tata 1613 Turbo">Tata 1613 Turbo</option>
+            <option value="Tata 2515 TC">Tata 2515 TC</option>
+            <option value="Tata 2515 Turbo">Tata 2515 Turbo</option>
+            <option value="Tata LPT 2518 TC">Tata LPT 2518 TC</option>
+            <option value="Tata 3118 TC">Tata 3118 TC</option>
+            <option value="AL 1611">AL 1611</option>
+            <option value="AL 1612">AL 1612</option>
+            <option value="AL 1613">AL 1613</option>
+            <option value="AL 1616">AL 1616</option>
+            <option value="AL 2214">AL 2214</option>
+            <option value="AL 2516">AL 2516</option>
+            <option value="AL 3116">AL 3116</option>
+          </select>
+        </label>
+      </div>
+      <h4> Type Of Body </h4>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Body type
+        </div>
+        <select ng-model="data.bodytype" name="bodytype">
+          <option value="Open Body-Full Body"> Open Body-Full Body </option>
+          <option value="Open Body-Half Body"> Open Body-Half Body </option>
+          <option value="Container"> Container </option>
+          <option value="Container Scooter Body"> Container Scooter Body </option>
+          <option value="Container-Vehicle Carrier"> Container-Vehicle Carrier </option>
+          <option value="Lower-Platform Trailer"> Lower-Platform Trailer </option>
+          <option value="Only Horse"> Only Horse </option>
+          <option value="Articulated Vehicles (2+ axles)"> Articulated Vehicles (2+ axles) </option>
+        </select>
+      </label>
+      <button class="button button-full button-positive" type="submit">
+        Apply
+      </button>
+    </form>
     </div>
-<select ng-model="data.Oem" name="Oem" >
-<option value="tata"> Tata </option>
-<option value="ashok_leyland"> Ashok Leyland </option>
-<option value="openbody"> Eicher </option>
-<option value="container"> Mahindra </option>
-</select>
-</label>
-</div>
-
- <h4> Variant  </h4>
-<div class="list">
-                      <label class="item item-input item-select">
-    <div class="input-label">
-      Variant
-    </div>
-<select ng-model="data.variant" name="variant" >
-<option value="1611"> 1611 </option>
-<option value="1612"> 1611 </option>
-<option value="1613"> 1613 </option>
-<option value="2214"> 2214 </option>
-<option value="2516"> 2516 </option>
-<option value="1616"> 1616 </option>
-<option value="1612 TC"> 1612 </option>
-<option value="1613_LPT/SE"> 1612 LPT/SE </option>
-<option value="2515_TC"> 2515 TC </option>
-<option value="2515_697(Turbo)"> 2515 697 </option>
-<option value="1512_TC"> 1515 TC </option>
-<option value="LPT_2518"> LPT 2518 </option>
-<option value="3118"> 3118 </option>
-<option value="3116"> 3116 </option>
-
-</select>
-</label>
-</div>
-
- <h4> Type Of Body   </h4>
-<div class="list card">
-  
-<ion-list>
-
-  <ion-checkbox value="open_body_full_body" ng-model="data.body_type.open_body_full_body" name="body_type">Open Body-Full Body</ion-checkbox>
-  <ion-checkbox name="body_type" ng-model="data.body_type.open_body_half_body">Open Body-Half Body</ion-checkbox>
-
-  <ion-checkbox value="container" name="body_type" ng-model="data.body_type.container">Container</ion-checkbox>
-  <ion-checkbox value="container_scooter_body" ng-model="data.body_type.container_scooter_body" name="body_type">Container Scooter Body</ion-checkbox>
-
-  <ion-checkbox  ng-model="data.body_type.container_vehicle_carrier" name="body_type">Container-Vehicle Carrier</ion-checkbox>
-  <ion-checkbox ng-model="data.body_type.lower_platform_trailer" name="body_type">Lower-Platform Trailer</ion-checkbox>
-
-   <ion-checkbox  ng-model="data.body_type.only_horse" name="body_type">Only Horse</ion-checkbox>
-  <ion-checkbox  ng-model="data.body_type.articulate_vehicles" name="body_type">Articulated Vehicles (2+ axles)</ion-checkbox>
-
-
-  
-  
-</ion-list>
-</div>
-
-<button class="button button-full button-positive" type="submit">
-          Apply
-
-          </button>   
-
-</form>
-
-</div>
-
-
-
-       </ion-content>
-       </ion-view>
+  </ion-content>
+</ion-view>

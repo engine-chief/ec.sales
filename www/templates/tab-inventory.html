@@ -1,42 +1,40 @@
-<ion-view view-title="Inventory">
-       <ion-content class="padding">
+<style>
+.action-sheet .button {
+  font-size: 17px;
+}
+.top-div {
+  margin-bottom: 20px;
+}
+button {
+  size: 10px;
+}
+a {
+  text-decoration: none;
+}
 
-       <a class="ion-funnel" href="#/tab/filter" style="font-size: 25px;"><span style="font-size: 15px;">Filter</span></a>
-       
-
- <div class="list">
-
-
-        <div class="item item-thumbnail-left"  ng-repeat="truck in trucks">
-       
-       <img src="/truckimg/{{truck.truckimage1}}"  data-pin-nopin="true">
-           <a href="#/tab/details/{{truck.truckid}}"> <h2>{{truck.manufacturing_month_and_year}} {{truck.oem}} {{truck.variant}} {{truck.body_type}} </h2></a>
-          <a  href="#/tab/details/{{truck.truckid}}"><p>{{seller_company_name}}</p></a>
-          <p> </p>
-
-          <a  href="#/tab/details/{{truck.truckid}}"><p>{{seller_estimated_price_on_rim}}</p></a>
-
-
-          <p style="font-size:25px;float:right;" class="ion-share" ng-click="showActionsheet()">
-</p>
-        </div>
-       
-
-        
+</style>
+<ion-view view-title="Inventory" cache-view="false">
+  <ion-content class="padding">
+    <div class="top-div">
+      <button class="button button-positive pull-right" ng-click="reload()">Fetch all trucks</button>
+      <a class="ion-funnel" href="#/tab/filter" style="font-size: 25px;"><span style="font-size: 15px;">Filter</span></a>
+    </div>
+    <div class="list">
+      <div class="item item-thumbnail-left" ng-repeat="truck in trucks">
+        <img ng-src="{{truck.ga_1}}" data-pin-nopin="true">
+        <a href="#/tab/details/{{truck.id}}"><h2>{{truck.variant}}</h2></a>
+        <h2>{{truck.bodytype}}</h2>
+        <h2>{{truck.manufacturing_month_and_year}}</h2>
+        <a href="#/tab/details/{{truck.id}}">
+          <p>{{seller_company_name}}</p>
+        </a>
+        <p> </p>
+        <a href="#/tab/details/{{truck.id}}">
+          <p>{{seller_estimated_price_on_rim}}</p>
+        </a>
+        <p style="font-size:25px;float:right;" class="ion-share" ng-click="showActionsheet()">
+        </p>
       </div>
-
-      <style>
-
-      .action-sheet .button 
-      {
-        font-size: 17px;
-      }
-      a
-      {
-        text-decoration: none;
-      }
-      </style>
-
-	  
-        </ion-content>
+    </div>
+  </ion-content>
 </ion-view>

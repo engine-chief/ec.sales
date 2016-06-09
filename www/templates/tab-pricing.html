@@ -1,0 +1,31 @@
+<ion-view view-title="Pricing">
+  <ion-content class="padding">
+    <form name="pricingForm" novalidate="" ng-submit="priceSubmit()">
+      <div class="list">
+        <div class="errors" style="margin:10px; color:red">
+          {{errors}}
+        </div>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> Seller Price Est. (Rim) </span>
+          <input type="number" ng-model="data.seller_initial_price_on_rim" name="seller_initial_price_on_rim" placeholder="10000">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> Seller Price final (Rim)</span>
+          <input type="number" ng-model="data.seller_final_price_on_rim" name="seller_final_price_on_rim" placeholder="10000">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> EC Grid Price (RIM) </span>
+          <input type="number" ng-model="data.grid_price" name="grid_price" placeholder="10000">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> Seller Price (With All Tyres) </span>
+          <input type="number" ng-model="data.seller_price" name="seller_price" placeholder="10000">
+        </label>
+      </div>
+      <button class="button button-full button-positive" type="submit">
+        Submit
+      </button>
+      </style>
+    </form>
+  </ion-content>
+</ion-view>

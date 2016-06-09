@@ -1,0 +1,41 @@
+<ion-view view-title="Inspection">
+  <ion-content class="padding">
+    <form name="inspectionForm" novalidate="" ng-submit="inspect()">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Date of Registration</span>
+          <input type="date" id="regdate" name="date_of_registration" ng-model="data.date_of_registration">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Mfg. Month and Year</span>
+          <input type="month" id="mfmn" name="manufacturing_month_and_year" ng-model="data.manufacturing_month_and_year" placeholder="MM/YY">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Insurance Valid Till</span>
+          <input type="date" id="insurance" name="insurance_valid_till" ng-model="data.insurance_valid_till" placeholder="Insurance Valid till">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">National Permit Valid Till</span>
+          <input type="date" id="permittill" name="national_permit_valid_till" ng-model="data.national_permit_valid_till" placeholder="National Permit Valid Till">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Fitness Valid Till</span>
+          <input type="date" id="fitness" name="fitness_valid_till" ng-model="data.fitness_valid_till" placeholder="Fitness">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Movement Status
+          </div>
+          <select ng-model="data.movement_status" name="movement_status">
+            <option value="stationary"> Stationary </option>
+            <option value="moving"> Moving </option>
+          </select>
+        </label>
+      </div>
+      <button class="button button-full button-positive" type="submit">
+        Submit
+      </button>
+      </style>
+    </form>
+  </ion-content>
+</ion-view>

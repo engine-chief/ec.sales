@@ -1,0 +1,72 @@
+<ion-view view-title="Truck Onboarding">
+  <ion-content class="padding">
+    <form name="onboardingForm" novalidate ng-submit="onboard()">
+      <div class="list">
+        <div class="errors" style="margin:10px; color:red">
+          {{errors}}
+        </div>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label"> Truck Registration RTO</span>
+          <input class="text-uppercase" type="text" ng-model="data.truck_passing" name="truck_passing" placeholder="HR 38" ng-pattern="truck_passing_regex">
+          <div class="errors" ng-show="onboardingForm.truck_passing.$invalid">Incorrect Format</div>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Truck Number</span>
+          <input class="text-uppercase" type="text" ng-model="data.truck_number" name="truck_number" placeholder="P 3498" ng-pattern="truck_number_regex">
+          <div class="errors" ng-show="onboardingForm.truck_number.$invalid">Incorrect Format</div>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Seller Name
+          </div>
+          <select ng-model="data.seller_name" name="seller_name" ng-options="seller.seller_company_name for seller in allSellers">
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Body Type
+          </div>
+          <select ng-model="data.bodytype" name="bodytype">
+            <option value="open_body_full_body">Open Body-Full Body </option>
+            <option value="open_body_half_body">Open Body-Half Body</option>
+            <option value="container"> Container </option>
+            <option value="container_scooter_body"> Container Scooter Body </option>
+            <option value="container"> Container-Vehicle Carrier </option>
+            <option value="container_vehicle_carrier"> Container Vehicle Carrier </option>
+            <option value="container"> Lower-Platform Trailer </option>
+            <option value="container_vehicle_carrier"> Only Horse </option>
+            <option value="articulated_vehicles"> Articulated Vehicles (2+ axles) </option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Variant
+          </div>
+          <select ng-model="data.variant" name="variant">
+            <option value="Tata 1512 TC">Tata 1512 TC</option>
+            <option value="Tata 1612 TC">Tata 1612 TC</option>
+            <option value="Tata 1612 Turbo">Tata 1612 Turbo</option>
+            <option value="Tata 1613 TC">Tata 1613 TC</option>
+            <option value="Tata 1613 Turbo">Tata 1613 Turbo</option>
+            <option value="Tata 2515 TC">Tata 2515 TC</option>
+            <option value="Tata 2515 Turbo">Tata 2515 Turbo</option>
+            <option value="Tata LPT 2518 TC">Tata LPT 2518 TC</option>
+            <option value="Tata 3118 TC">Tata 3118 TC</option>
+            <option value="AL 1611">AL 1611</option>
+            <option value="AL 1612">AL 1612</option>
+            <option value="AL 1613">AL 1613</option>
+            <option value="AL 1616">AL 1616</option>
+            <option value="AL 2214">AL 2214</option>
+            <option value="AL 2516">AL 2516</option>
+            <option value="AL 3116">AL 3116</option>
+          </select>
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-full button-positive" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -39,6 +39,8 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
 
   // Each tab has its own nav history stack:
 
+
+  // login view
   .state('tab.login', {
     url: '/login',
     views: {
@@ -49,102 +51,114 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
     }
   })
 
-  .state('tab.client', {
-      url: '/client',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-client.html',
-          controller: 'ClientCtrl'
-        }
-      }
-    })
 
-  .state('tab.inspect', {
-      url: '/inspect',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-inspect.html',
-          controller: 'InspectCtrl'
-        }
+  // menu view
+  .state('tab.tabs', {
+    url: '/tabs',
+    views: {
+      'tab-tabs': {
+        templateUrl: 'templates/tab-tabs.html',
+        controller: 'TabCtrl'
       }
-    })
+    }
+  })
 
+
+  // inventory view
   .state('tab.inventory', {
-      url: '/inventory',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-inventory.html',
-          controller: 'InventoryCtrl'
-        }
+    url: '/inventory',
+    views: {
+      'tab-inventory': {
+        templateUrl: 'templates/tab-inventory.html',
+        controller: 'InventoryCtrl'
       }
-    })
+    }
+  })
 
   .state('tab.filter', {
-      url: '/filter',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-filter.html',
-          controller: 'FilterCtrl'
-        }
+    url: '/filter',
+    views: {
+      'tab-inventory': {
+        templateUrl: 'templates/tab-filter.html',
+        controller: 'FilterCtrl'
       }
-    })
+    }
+  })
 
-
-
-  .state('tab.inspect2', {
-      url: '/inspect2',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-inspect2.html',
-          controller: 'InspectCtrl2'
-        }
+  // seller view
+  .state('tab.seller', {
+    url: '/seller',
+    views: {
+      'tab-seller': {
+        templateUrl: 'templates/tab-seller.html',
+        controller: 'SellerCtrl'
       }
-    })
+    }
+  })
 
-
-   .state('tab.details', {
-      url: '/details',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-details.html',
-          controller: 'DetailCtrl'
-        }
+  // onboarding view
+  .state('tab.onboarding', {
+    url: '/onboarding',
+    views: {
+      'tab-onboarding': {
+        templateUrl: 'templates/tab-onboarding.html',
+        controller: 'OnboardingCtrl'
       }
-    })
+    }
+  })
 
-   .state('tab.editinspect', {
-      url: '/editinspect',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-editinspect.html',
-          controller: 'EditinspectCtrl'
-        }
+  .state('tab.inspection', {
+    url: '/inspection',
+    views: {
+      'tab-onboarding': {
+        templateUrl: 'templates/tab-inspection.html',
+        controller: 'InspectionCtrl'
       }
-    })
+    }
+  })
 
-
-   .state('tab.search', {
-      url: '/search',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-search.html',
-          controller: 'SearchCtrl'
-        }
+  .state('tab.pricing', {
+    url: '/pricing',
+    views: {
+      'tab-onboarding': {
+        templateUrl: 'templates/tab-pricing.html',
+        controller: 'PriceCtrl'
       }
-    })
+    }
+  })
 
-
-
-  .state('tab.tabs', {
-      url: '/tabs',
-      views: {
-        'tab-client': {
-          templateUrl: 'templates/tab-tabs.html',
-          controller: 'TabCtrl'
-        }
+  // inspection view
+  .state('tab.editinspect', {
+    url: '/editinspect',
+    views: {
+      'tab-tabs': {
+        templateUrl: 'templates/tab-editinspect.html',
+        controller: 'EditinspectCtrl'
       }
-    });
-  
+    }
+  })
+
+
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-tabs': {
+        templateUrl: 'templates/tab-search.html',
+        controller: 'SearchCtrl'
+      }
+    }
+  })
+
+  .state('tab.details', {
+    url: '/details',
+    views: {
+      'tab-onboarding': {
+        templateUrl: 'templates/tab-details.html',
+        controller: 'DetailCtrl'
+      }
+    }
+  });
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/login');
