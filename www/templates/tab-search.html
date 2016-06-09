@@ -5,12 +5,22 @@
       <div class="item item-input-inset">
         <label class="item-input-wrapper" id="search-input">
           <i class="icon ion-search placeholder-icon"></i>
-          <input type="text" placeholder="Search" ng-model="query" ng-change="search()">
+          <input id="searchText" type="text" placeholder="Search" ng-model="query" ng-change="search()">
         </label>
       </div>
     </div>
-    <div class="padding">
-      <a class="button button-block button-positive" href="#/tab/editinspect">Submit</a>
+    <div class="list">
+      <div class="item item-thumbnail-left" ng-repeat="truck in trucks">
+        <img ng-src="{{truck.ga_1}}" data-pin-nopin="true">
+        <a href="#/tab/editinspect"><h2>{{truck.variant}}</h2></a>
+        <h2>{{truck.bodytype}}</h2>
+        <h2>{{truck.manufacturing_month_and_year}}</h2>
+        <h2>{{truck.truck_passing}} {{truck.truck_number}}</h2>
+        </p>
+      </div>
     </div>
+    <!-- <div class="padding">
+      <a class="button button-block button-positive" href="#/tab/editinspect">Submit</a>
+    </div> -->
   </ion-content>
 </ion-view>

@@ -127,24 +127,23 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
     }
   })
 
-  // inspection view
-  .state('tab.editinspect', {
-    url: '/editinspect',
+  // search/inspection view
+  .state('tab.search', {
+    url: '/search',
     views: {
-      'tab-tabs': {
-        templateUrl: 'templates/tab-editinspect.html',
-        controller: 'EditinspectCtrl'
+      'tab-search': {
+        templateUrl: 'templates/tab-search.html',
+        controller: 'SearchCtrl'
       }
     }
   })
 
-
-  .state('tab.search', {
-    url: '/search',
+  .state('tab.editinspect', {
+    url: '/editinspect',
     views: {
-      'tab-tabs': {
-        templateUrl: 'templates/tab-search.html',
-        controller: 'SearchCtrl'
+      'tab-search': {
+        templateUrl: 'templates/tab-editinspect.html',
+        controller: 'EditinspectCtrl'
       }
     }
   })

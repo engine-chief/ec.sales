@@ -1,4 +1,4 @@
-var rootLink = "http://192.168.2.77:3000";
+var rootLink = "http://192.168.1.3:3000";
 // var rootLink = "http://enginechief.in";
 
 angular.module('ionicApp.controllers', [])
@@ -179,10 +179,17 @@ angular.module('ionicApp.controllers', [])
   };
 })
 
-.controller('SearchCtrl', function($scope) {
-
-
-
+.controller('SearchCtrl', function($scope, $http, $location, $ionicPopup) {
+  $scope.search = function() {
+    var searchQuery = document.getElementById("searchText").value;
+    $http.get(rootLink + '/api/v0/trucks/filter', {
+      params: {
+        query: searchQuery
+      }
+    }).then(function(res) {
+      $scope.trucks = res.data;
+    });
+  };
 })
 
 
