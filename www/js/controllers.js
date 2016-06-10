@@ -1,4 +1,4 @@
-var rootLink = "http://192.168.1.3:3000";
+var rootLink = "http://192.168.2.34:3000";
 // var rootLink = "http://enginechief.in";
 
 angular.module('ionicApp.controllers', [])

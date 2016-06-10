@@ -3,10 +3,7 @@
   font-size: 17px;
 }
 .top-div {
-  margin-bottom: 20px;
-}
-button {
-  size: 10px;
+  margin-bottom: 10px;
 }
 a {
   text-decoration: none;
@@ -16,8 +13,9 @@ a {
 <ion-view view-title="Inventory" cache-view="false">
   <ion-content class="padding">
     <div class="top-div">
-      <button class="button button-positive pull-right" ng-click="reload()">Fetch all trucks</button>
-      <a class="ion-funnel" href="#/tab/filter" style="font-size: 25px;"><span style="font-size: 15px;">Filter</span></a>
+      <a class="ion-funnel" href="#/tab/filter" style="font-size: 25px;"><span style="font-size: 20px;"> Filter</span></a>
+      <!-- <button class="button button-positive pull-right" ng-click="reload()">Fetch all trucks</button> -->
+      <a ng-click="reload()" class="pull-right ion-android-download" style="font-size: 25px; margin-top: 5px"><span style="font-size: 20px;"> Fetch all trucks</span></a>
     </div>
     <div class="list">
       <div class="item item-thumbnail-left" ng-repeat="truck in trucks">
