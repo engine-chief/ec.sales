@@ -2,7 +2,7 @@
   <ion-content class="padding">
     <form name="sellerForm" novalidate="" ng-submit="seller()">
       <div class="list">
-        <div class="errors" style="margin:10px; color:red">
+        <div class="errors" style="margin:10px; color:red; font-size:15px">
           {{errors}}
         </div>
         <label class="item item-input item-stacked-label">
@@ -23,20 +23,28 @@
         </label>
         <p style="margin-top:20px;font-size:15px;">Seller's Manager 1</p>
         <label class="item item-input item-stacked-label">
-          <span class="input-label">Manager Phone 1</span>
+          <span class="input-label">Manager's Name</span>
+          <input type="text" ng-model="data.manager1_name" name="manager1_name" placeholder="Suraj Parmar">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Manager's Phone 1</span>
           <input type="number" ng-model="data.manager1_phone_1" name="manager1_phone_1" placeholder="XXXXXXXX67">
         </label>
         <label class="item item-input item-stacked-label">
-          <span class="input-label">Manager Phone 2</span>
+          <span class="input-label">Manager's Phone 2</span>
           <input type="number" ng-model="data.manager1_phone_2" name="manager1_phone_2" placeholder="XXXXXXXX89">
         </label>
         <p style="margin-top:20px;font-size:15px;">Seller's Manager 2 </p>
         <label class="item item-input item-stacked-label">
-          <span class="input-label">Manager Phone 1</span>
+          <span class="input-label">Manager's Name</span>
+          <input type="text" ng-model="data.manager2_name" name="manager2_name" placeholder="Geetika Kwatra">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Manager's Phone 1</span>
           <input type="number" ng-model="data.manager2_phone_1" name="manager2_phone_1" placeholder="XXXXXXXX89">
         </label>
         <label class="item item-input item-stacked-label">
-          <span class="input-label">Manager Phone 2</span>
+          <span class="input-label">Manager's Phone 2</span>
           <input type="number" ng-model="data.manager2_phone_2" name="manager2_phone_2" placeholder="XXXXXXXX89">
         </label>
         <p></p>
@@ -50,9 +58,7 @@
             <div class="input-label">
               Transport Center
             </div>
-            <select ng-model="data.transport_center" name="transport_center">
-              <option value="Punjabi Bagh"> Punjabi Bagh </option>
-              <option value="Transport Nagar, Faridabad"> Transport Nagar, Faridabad </option>
+            <select ng-model="data.transport_center" name="transport_center" ng-options="tc.name for tc in transportCenters">
             </select>
           </label>
         </div>

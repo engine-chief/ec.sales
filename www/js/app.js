@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'])
+angular.module('ec.sales', ['ionic', 'ec.sales.controllers', 'ec.sales.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -13,7 +13,6 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
@@ -88,6 +87,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
   // seller view
   .state('tab.seller', {
     url: '/seller',
+    cache: 'false',
     views: {
       'tab-seller': {
         templateUrl: 'templates/tab-seller.html',
@@ -99,6 +99,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
   // onboarding view
   .state('tab.onboarding', {
     url: '/onboarding',
+    cache: 'false',
     views: {
       'tab-onboarding': {
         templateUrl: 'templates/tab-onboarding.html',
@@ -119,6 +120,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
 
   .state('tab.pricing', {
     url: '/pricing',
+    cache: 'false',
     views: {
       'tab-onboarding': {
         templateUrl: 'templates/tab-pricing.html',
@@ -130,6 +132,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
   // search/inspection view
   .state('tab.search', {
     url: '/search',
+    cache: 'false',
     views: {
       'tab-search': {
         templateUrl: 'templates/tab-search.html',
@@ -140,6 +143,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
 
   .state('tab.editinspect', {
     url: '/editinspect',
+    cache: 'false',
     views: {
       'tab-search': {
         templateUrl: 'templates/tab-editinspect.html',
@@ -148,6 +152,7 @@ angular.module('ionicApp', ['ionic', 'ionicApp.controllers', 'ionicApp.services'
     }
   })
 
+  // details view
   .state('tab.details', {
     url: '/details',
     views: {

@@ -1,6 +1,6 @@
 <ion-view view-title="Search">
   <ion-content class="padding">
-    <p>Search Your Truck (By Truck)</p>
+    <h4>Search Your Truck (By Truck Number)</h4>
     <div id="search-bar">
       <div class="item item-input-inset">
         <label class="item-input-wrapper" id="search-input">
@@ -12,7 +12,7 @@
     <div class="list">
       <div class="item item-thumbnail-left" ng-repeat="truck in trucks">
         <img ng-src="{{truck.ga_1}}" data-pin-nopin="true">
-        <a href="#/tab/editinspect"><h2>{{truck.variant}}</h2></a>
+        <a ng-click=loadTruck(truck)><h2>{{truck.variant}}</h2></a>
         <h2>{{truck.bodytype}}</h2>
         <h2>{{truck.manufacturing_month_and_year}}</h2>
         <h2>{{truck.truck_passing}} {{truck.truck_number}}</h2>

@@ -1,4 +1,4 @@
-angular.module('ionicApp.services', [])
+angular.module('ec.sales.services', [])
 
 .factory('truckService', function($http) {
 	var trucks = [];
